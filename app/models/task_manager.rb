@@ -1,11 +1,13 @@
 require 'yaml/store'
 require_relative 'task'
 class TaskManager
-  def self.database
-    @database ||= YAML::Store.new("db/task_manager")
+  attr_reader :database
+
+  def initialize(database)
+    @database ||= database
   end
 
-  def self.create(task)
+  def create(task)
     database.transaction do
       database['tasks'] ||= []
       database['total'] ||= 0
@@ -14,21 +16,21 @@ class TaskManager
     end
   end
 
-  def self.raw_tasks
+  def raw_tasks
     database.transaction do
       database['tasks'] || []
     end
   end
 
-  def self.all
+  def all
     raw_tasks.map {|data| Task.new(data)}
   end
 
-  def self.raw_task(id)
+  def raw_task(id)
     raw_tasks.find { |task| task["id"] == id }
   end
 
-  def self.find(id)
+  def find(id)
     Task.new(raw_task(id))
   end
 

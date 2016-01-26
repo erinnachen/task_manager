@@ -7,7 +7,7 @@ class TaskManagerApp < Sinatra::Base
   end
 
   get '/tasks' do
-    @tasks = TaskManager.all
+    @tasks = task_manager.all
     erb :index
   end
 
@@ -16,12 +16,17 @@ class TaskManagerApp < Sinatra::Base
   end
 
   post '/tasks' do
-    TaskManager.create(params[:task])
+    task_manager.create(params[:task])
     redirect 'tasks'
   end
 
   get '/tasks/:id' do |id|
-    @task = TaskManager.find(id.to_i)
+    @task = task_manager.find(id.to_i)
     erb :show
+  end
+
+  def task_manager
+    database = YAML::Store.new("db/task_manager")
+    TaskManager.new(database)
   end
 end

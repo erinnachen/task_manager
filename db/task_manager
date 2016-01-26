@@ -6,4 +6,7 @@ tasks:
 - id: 2
   title: Wash the car
   description: it's mad dirty
-total: 2
+- id: 3
+  title: Laundry
+  description: get the pile of the clothes off the floor
+total: 3
