@@ -1,7 +1,6 @@
-require 'models/task_manager'
+require 'yaml/store'
+
 class TaskManagerApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__)
-  set :method_override, true
 
   get '/' do
     erb :dashboard
@@ -49,4 +48,5 @@ class TaskManagerApp < Sinatra::Base
     database = YAML::Store.new("db/task_manager")
     TaskManager.new(database)
   end
+
 end

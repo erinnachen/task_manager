@@ -9,4 +9,7 @@ tasks:
 - id: 3
   title: Launder clothes
   description: Need some clean underwear
-total: 3
+- id: 4
+  title: Build an app
+  description: make lots of money (or gain some experience)
+total: 4
