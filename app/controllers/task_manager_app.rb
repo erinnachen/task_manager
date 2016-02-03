@@ -31,6 +31,11 @@ class TaskManagerApp < Sinatra::Base
     erb :edit
   end
 
+  put '/tasks/:id' do |id|
+    task_manager.update(params[:task], id.to_i)
+    redirect '/tasks'
+  end
+
   not_found do
     erb :error
   end
