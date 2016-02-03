@@ -11,11 +11,18 @@
       <div class = "col-md-2">
         <a class="btn btn-primary" href="/tasks/<%= task.id %>/edit" role="button">Edit</a>
       </div>
-      <!-- <form action="/tasks/<%=task.id%>" method = "POST">
-        <input type="hidden" name='_method' value='delete'>
-        <input type="submit" value='delete'>
-      </form> -->
-    </div>
+
+      <div class = "col-md-2">
+        <form action="/tasks/<%=task.id%>" method = "POST">
+          <input type="hidden" name='_method' value='delete'>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+      </div>
+    <% end %>
+    <% if @tasks.empty? %>
+      <div class = "show">
+      </div>
     <% end %>
     <br>
 </div>

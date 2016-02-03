@@ -17,3 +17,7 @@ body {
 .title_with_seperator {
   border-bottom: 2px solid #d5d5d5;
 }
+
+.show {
+  height: 300px;
+}
