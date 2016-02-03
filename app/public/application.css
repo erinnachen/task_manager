@@ -1,0 +1,19 @@
+body {
+  background-color: #daf650;
+}
+
+.labels {
+  font-size: 24px;
+}
+
+.white {
+  background-color: #ffffff;
+}
+
+.yellow {
+  background-color: magenta;
+}
+
+.title_with_seperator {
+  border-bottom: 2px solid #d5d5d5;
+}

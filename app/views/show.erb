@@ -1,4 +1,11 @@
-<a href="/tasks">Task Index</a>
+<div class='col-md-6 col-md-offset-3 navbar navbar-default navbar-static-top'>
+  <ul class="nav nav-pills navbar-right">
+    <li><a href="/"><h2>Home</h2></a></li>
+    <li><a href="/tasks"><h2>Tasks</h2></a></li>
+  </ul>
+</div>
 
-<h1><%= @task.title %></h1>
-<p><%= @task.description %></p>
+<div class = "col-md-6 col-md-offset-3 white">
+  <h2 class = "title_with_seperator"><%= @task.title %></h2>
+  <h3><%= @task.description %></h3>
+</div>
