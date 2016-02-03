@@ -25,6 +25,10 @@ class TaskManagerApp < Sinatra::Base
     erb :show
   end
 
+  not_found do
+    erb :error
+  end
+
   def task_manager
     database = YAML::Store.new("db/task_manager")
     TaskManager.new(database)
