@@ -6,9 +6,9 @@
     <input type="hidden" name='_method' value='put'>
     <div class="form-group">
       <label for="task_title"></label>
-      <input type="text" class="form-control" id="task_title" value="<%=@task.title%>" name='task[title]'/>
+      <input type="text" class="form-control title-edit" id="task-title" value="<%=@task.title%>" name='task[title]'/>
     </div>
-    <textarea name='task[description]' class="form-control" rows="8"><%=@task.description%></textarea>
+    <textarea name='task[description]' class="form-control" id = "edit-textbox" rows="8" value="<%=@task.description%>"><%=@task.description%></textarea>
     <br>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
